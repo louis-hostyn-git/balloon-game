@@ -1311,16 +1311,6 @@ document.addEventListener("mouseup", () => {
 })
 
 
-document.addEventListener("touchstart", () => {
-    if(!falling) wantsToFly = true;
-    if(!started && !ended) startGame();
-})
-document.addEventListener("touchend", () => {
-    wantsToFly = false;
-})
-
-
-
 ////////////////////////////////////////////
 
 prepareGame();
@@ -1332,6 +1322,10 @@ prepareGame();
 
 ///////////////////////////////////////////////////////📜 DRAFTS 📜///////////////////////////////////////////////////////
 
+
+document.querySelector("footer").addEventListener("click", () => {
+    stopAllMusic();
+})
 
 
 

@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Micro+5&display=swap');
+
+
+body{
+    margin:0px;
+    padding:0px;
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    font-family:"Micro 5", sans-serif;
+}
+body::selection{
+    background-color:transparent;
+}
+
+.bossModeFilter{
+    filter:sepia() hue-rotate(300deg) invert() brightness(5);
+}
+
+
+#canvasGame{
+    position:absolute;
+    bottom:0;
+    margin:0;
+    padding:0;
+    width:100vw;
+    height:100vh;
+}
+
+#topAdvice{
+    position:absolute;
+    top:0;
+    left:0px;
+    z-index:999;
+    margin:30px 0px 0px 10px;
+    font-style:italic;
+    color:black;
+    font-size:1.5rem;
+}
+#topAdvice span{
+    font-size:1rem;
+    margin:0;
+}
+
+#scoreDisplay{
+    color:black;
+    font-size:3.5rem;
+    position:absolute;
+    top:0;
+    right:0;
+    padding:0;
+    margin:0;
+    margin-top:10px;
+    margin-right:20px;
+    z-index:999;
+}
+
+#startTag{
+    position:relative;
+    z-index:999; 
+    
+    width:100vw;
+
+    color:rgb(0, 0, 0);
+    font-size:5rem;
+    padding:0;
+    margin:0;
+    display:flex;
+    align-self:flex-start;
+    justify-content:center;
+    align-items:center;
+    height:60vh;
+}
+
+.startAnimation{
+    animation:go 2s ease;
+}
+.waitingToStart{
+    animation:waiting-to-start 3s infinite ease;
+}
+
+
+@keyframes waiting-to-start{
+    0%{transform:scale(0.5)}
+    50%{transform:scale(1)}
+    100%{transform:scale(0.5)}
+}
+
+
+@keyframes go{
+    0%{color:orange; transform: scale(0.5);}
+    30%{color:gold}
+    50%{color:darkorchid;}
+    70%{color:blue}
+    90%{color:red; transform: scale(1);}
+}
+
+
+#nightComing{
+    position:relative;
+    z-index:999;
+    margin:0px 0px 0px 10px;
+    font-style:italic;
+    color:black;
+    font-size:1.75rem;
+    display:none;
+    color:white;
+    animation:nightComingAnimation 2s ease;
+}
+#nightComing span{
+    font-size:1.25rem;
+}
+
+.nightComin{
+    animation:nightComingAnimation 2s ease;
+}
+
+@keyframes nightComingAnimation{
+    from{transform:scale(0.25); color:black;}
+    to{transform:scale(1.25); color:white;};
+}
+
+
+
+#beeGif{
+    width:75px;
+
+    position:absolute;
+    z-index: 1000;
+    left: 0px;
+    top: 0;
+    display:none;
+}
+
+
+
+
+
+#restartBtn{
+    position:relative;
+    z-index:999;
+    max-width:150px;
+    max-height:150px;
+    width:30vw;
+    height:30vw;
+    padding:5px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    border-radius:100px;
+    background-color:rgb(239, 61, 30);
+    font-family:"Micro 5", sans-serif;
+    font-size:2.75rem;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.3), 
+                inset 0px 0px 5px rgb(255, 255, 255);
+    border-style:outset;
+
+    animation:restart 1.5s;
+    display:none;
+}
+
+#restartBtn span{
+    font-size:2rem;
+    margin:0;
+    padding:0;
+}
+
+#restartBtn:active{
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+    filter:brightness(1.05);
+}
+
+@keyframes restart{
+    from{transform:scale(0)}
+    to{transform:scale(1)}
+}
+
+
+
+
+
+
+#turkeyBossGif{
+    position:absolute;
+    bottom:16vh;
+    right:2.5vw;
+    z-index:1000;
+    width:175px;
+    transform:rotateY(180deg);
+    display:none;
+
+}
+
+#bossWarningMsg{
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    z-index:1001;
+    transform: translateX(-50%);
+    padding: 20px 40px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(45deg, #8b0000, #ff0000);
+    border: 3px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+    opacity: 0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    display:none;
+    animation: 
+        slideIn 0.6s ease-out forwards,
+        shake 0.6s 0.6s ease-in-out,
+        pulse 1.2s 1.2s 1;
+}
+#bossWarning span{
+    font-size:3rem;
+}
+
+
+
+/* Slide from top */
+@keyframes slideIn {
+  from {
+    transform: translate(-50%, -100px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+/* Small shake for tension */
+@keyframes shake {
+  0% { transform: translate(-50%, 0); }
+  25% { transform: translate(-52%, 0); }
+  50% { transform: translate(-48%, 0); }
+  75% { transform: translate(-51%, 0); }
+  100% { transform: translate(-50%, 0); }
+}
+
+/* Pulsing glow */
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px rgba(255, 0, 0, 0.6); }
+  50% { box-shadow: 0 0 30px rgba(255, 0, 0, 1); }
+  100% { box-shadow: 0 0 10px rgba(255, 0, 0, 0.6); }
+}

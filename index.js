@@ -1239,6 +1239,7 @@ function removeEverythingFromTheMiddle(){
     bee.img.style.display = "none";
     turkeyBoss.img.style.display = "none";
     bossWarningMsg.style.display = "none";
+    startTag.style.display = "none";
 }
 
 function removePreviousFilters(){

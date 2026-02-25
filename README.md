@@ -8,7 +8,7 @@ L'objectif était de créer un jeu simple sans utiliser de bibliothèques extern
 
 ## 🛠️ Compétences Techniques Appliquées
 - **Logique de programmation :** Utilisation de boucles de rendu (requestAnimationFrame) pour une animation fluide.
-- **Physique appliquée :** Simulation de la gravité et de l'inertie pour le pilotage de la montgolfière.
+- **Physique appliquée :** Simulation de la gravité pour le pilotage de la montgolfière.
 - **Algorithmes de collision :** Détection en temps réel entre le joueur et les obstacles mobiles (logique de capteurs).
 - **Gestion d'états :** Mise en place d'un système de score et de changements d'environnement (mode jour/nuit).
 
